@@ -1,0 +1,15 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+</head>
+<body>
+    <ul>
+        @foreach (var v in ViewBag.files)
+        {
+            <li><a target="_blank" href="/@ViewBag.customer/render/@v.file_name">@v.file_name</a></li>
+        }
+    </ul>
+</body>
+</html>

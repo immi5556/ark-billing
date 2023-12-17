@@ -1,0 +1,4 @@
+
+column resizable - 
+
+https://github.com/dobtco/jquery-resizable-columns/

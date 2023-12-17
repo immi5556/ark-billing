@@ -1,0 +1,15 @@
+{
+  "title": "Invoice",
+  "address": "\n                <p>A.M.A. Traders</p>\n                <p>No 31, Victoria Garden, Jawaharlal Nerhu Rd, Koyambedu<br>Chennai - 600107</p>\n                <p>email: ameer2252009@gmail.com</p>\n                <p>Phone / Mob: 9840302157 / 9994216173</p>\n            ",
+  "to": "Recipient",
+  "to_address": "\n                <p>\n                    Tamilnadu State Palmgur &amp; Fibre <br>\n                    Marketing Co-Op Federation Ltd.<br>\n                    Palm Product Complex <br>\n                    Pudukkottai – 622002\n                </p>\n            ",
+  "uq_type": "101138",
+  "columns": [
+    "<th ark-inv-col=\"\" style=\"width:10px;\"><span contenteditable=\"\">Sl <br>No</span><div class=\"resizer\" style=\"height: 82px;\"></div></th>",
+    "<th ark-inv-col=\"\" style=\"width:50px;\"><span contenteditable=\"\">HSN <br>Code</span><div class=\"resizer\" style=\"height: 82px;\"></div></th>",
+    "<th ark-inv-col=\"\"><span contenteditable=\"\">பொருள்</span><div class=\"resizer\" style=\"height: 82px;\"></div></th>",
+    "<th ark-inv-col=\"\" style=\"width:100px;\"><span contenteditable=\"\">அளவு <br> கிலோ எண்கள் </span><div class=\"resizer\" style=\"height: 82px;\"></div></th>",
+    "<th ark-inv-col=\"\" style=\"width:100px;\"><span contenteditable=\"\">ஒன்றின் விலை <br> ரூ . பை </span><div class=\"resizer\" style=\"height: 82px;\"></div></th>",
+    "<th ark-inv-col=\"\" style=\"width:100px;\"><span contenteditable=\"\">மொத்தத் தொகை <br> ரூ . பை</span><div class=\"resizer\" style=\"height: 82px;\"></div></th>"
+  ]
+}

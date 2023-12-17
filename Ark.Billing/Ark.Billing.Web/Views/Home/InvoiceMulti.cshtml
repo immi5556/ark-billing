@@ -1,0 +1,271 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <title>Billing Software - Opensource (Immanuel : Developer)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Opensource billing software, Immanuel developer, open source contributor" />
+    <meta name="robots" content="index, follow" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="identifier-url" content="https://www.immanuel.co" />
+    <meta name="Language" content="en, en-us, en-gb, en-bz, en-za" />
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <link rel="shortcut icon" type="image/png" href="https://immanuel.co/favicon.ico" />
+    <link href="~/css/invoice.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1 ark-editable contenteditable="">Invoice</h1>
+            <address style="font-size:xx-small;height:100px;" contenteditable>
+                <p>A.M.A. Traders</p>
+                <p>No 31, Victoria Garden, Jawaharlal Nerhu Rd, Koyambedu<br>Chennai - 600107</p>
+                <p>email: ameer2252009@gmail.com</p>
+                <p>Phone / Mob: 9840302157 / 9994216173</p>
+            </address>
+            <span>
+                <img alt="" src="/img/ama_traders_1.png" height="75">
+                <input type="file" accept="image/*">
+            </span>
+        </header>
+        <article style="height:740px;">
+            <h1 contenteditable="" style="text-align:left;">Recipient</h1>
+            <address contenteditable style="height:50px;font-size: medium;font-weight: normal;padding-top: 10px;">
+                <p>Some Company<br>c/o Some Guy</p>
+            </address>
+            <table class="meta">
+                <tr>
+                    <th><span contenteditable>Invoice #</span></th>
+                    <td><span contenteditable>101138</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Date</span></th>
+                    <td><span contenteditable>January 1, 2012</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Amount Due</span></th>
+                    <td><span id="prefix">@ViewBag.currency</span><span contenteditable>0.00</span></td>
+                </tr>
+            </table>
+
+            <table class="inventory">
+                <thead>
+                    <tr>
+                        <th style="width:20px;"><span contenteditable>Sl <br/>No</span></th>
+                        <th style="width:40px;"><span contenteditable>HSN <br />Code</span></th>
+                        <th><span contenteditable>பொருள்</span></th>
+                        <th style="width:70px;"><span contenteditable>அளவு <br /> கிலோ எண்கள் </span></th>
+                        <th style="width:100px;"><span contenteditable>ஒன்றின் விலை <br /> ரூ . பை </span></th>
+                        <th style="width:100px;"><span contenteditable>மொத்தத் தொகை <br /> ரூ . பை</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable=""><a class="cut">-</a>1</td>
+                        <td><span contenteditable></span></td>
+                        <td><span contenteditable></span></td>
+                        <td><span contenteditable>1</span></td>
+                        <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                        <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="add">+</a>
+
+            <table class="balance">
+                <tr>
+                    <th><span contenteditable>Total</span></th>
+                    <td><span data-prefix>$</span><span contenteditable>600.00</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Amount Paid</span></th>
+                    <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Balance Due</span></th>
+                    <td><span data-prefix>$</span><span contenteditable>600.00</span></td>
+                </tr>
+            </table>
+
+        </article>
+        <aside>
+            <h1 style="text-align:left;"><span contenteditable>Additional Notes</span></h1>
+            <div contenteditable>
+                <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+            </div>
+        </aside>
+    </div>
+
+    <div class="page">
+        <header>
+            <h1 ark-editable contenteditable="">Invoice</h1>
+            <address style="font-size:xx-small;height:100px;" contenteditable>
+                <p>A.M.A. Traders</p>
+                <p>No 31, Victoria Garden, Jawaharlal Nerhu Rd, Koyambedu<br>Chennai - 600107</p>
+                <p>email: ameer2252009@gmail.com</p>
+                <p>Phone / Mob: 9840302157 / 9994216173</p>
+            </address>
+            <span>
+                <img alt="" src="/img/ama_traders_1.png" height="75">
+                <input type="file" accept="image/*">
+            </span>
+        </header>
+        <article style="height:740px;">
+            <h1 contenteditable="" style="text-align:left;">Recipient</h1>
+            <address contenteditable style="height:50px;font-size: medium;font-weight: normal;padding-top: 10px;">
+                <p>Some Company<br>c/o Some Guy</p>
+            </address>
+            <table class="meta">
+                <tr>
+                    <th><span contenteditable>Invoice #</span></th>
+                    <td><span contenteditable>101138</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Date</span></th>
+                    <td><span contenteditable>January 1, 2012</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Amount Due</span></th>
+                    <td><span id="prefix">@ViewBag.currency</span><span contenteditable>0.00</span></td>
+                </tr>
+            </table>
+
+            <table class="inventory">
+                <thead>
+                    <tr>
+                        <th style="width:20px;"><span contenteditable>Sl <br/>No</span></th>
+                        <th style="width:40px;"><span contenteditable>HSN <br />Code</span></th>
+                        <th><span contenteditable>பொருள்</span></th>
+                        <th style="width:70px;"><span contenteditable>அளவு <br /> கிலோ எண்கள் </span></th>
+                        <th style="width:100px;"><span contenteditable>ஒன்றின் விலை <br /> ரூ . பை </span></th>
+                        <th style="width:100px;"><span contenteditable>மொத்தத் தொகை <br /> ரூ . பை</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable=""><a class="cut">-</a>1</td>
+                        <td><span contenteditable></span></td>
+                        <td><span contenteditable></span></td>
+                        <td><span contenteditable>1</span></td>
+                        <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                        <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="add">+</a>
+
+            <table class="balance">
+                <tr>
+                    <th><span contenteditable>Total</span></th>
+                    <td><span data-prefix>$</span><span contenteditable>600.00</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Amount Paid</span></th>
+                    <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Balance Due</span></th>
+                    <td><span data-prefix>$</span><span contenteditable>600.00</span></td>
+                </tr>
+            </table>
+
+        </article>
+        <aside>
+            <h1 style="text-align:left;"><span contenteditable>Additional Notes</span></h1>
+            <div contenteditable>
+                <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+            </div>
+        </aside>
+    </div>
+
+    <div class="page">
+        <header>
+            <h1 ark-editable contenteditable="">Invoice</h1>
+            <address style="font-size:xx-small;height:100px;" contenteditable>
+                <p>A.M.A. Traders</p>
+                <p>No 31, Victoria Garden, Jawaharlal Nerhu Rd, Koyambedu<br>Chennai - 600107</p>
+                <p>email: ameer2252009@gmail.com</p>
+                <p>Phone / Mob: 9840302157 / 9994216173</p>
+            </address>
+            <span>
+                <img alt="" src="/img/ama_traders_1.png" height="75">
+                <input type="file" accept="image/*">
+            </span>
+        </header>
+        <article style="height:740px;">
+            <h1 contenteditable="" style="text-align:left;">Recipient</h1>
+            <address contenteditable style="height:50px;font-size: medium;font-weight: normal;padding-top: 10px;">
+                <p>Some Company<br>c/o Some Guy</p>
+            </address>
+            <table class="meta">
+                <tr>
+                    <th><span contenteditable>Invoice #</span></th>
+                    <td><span contenteditable>101138</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Date</span></th>
+                    <td><span contenteditable>January 1, 2012</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Amount Due</span></th>
+                    <td><span id="prefix">@ViewBag.currency</span><span contenteditable>0.00</span></td>
+                </tr>
+            </table>
+
+            <table class="inventory">
+                <thead>
+                    <tr>
+                        <th style="width:20px;"><span contenteditable>Sl <br />No</span></th>
+                        <th style="width:40px;"><span contenteditable>HSN <br />Code</span></th>
+                        <th><span contenteditable>பொருள்</span></th>
+                        <th style="width:70px;"><span contenteditable>அளவு <br /> கிலோ எண்கள் </span></th>
+                        <th style="width:100px;"><span contenteditable>ஒன்றின் விலை <br /> ரூ . பை </span></th>
+                        <th style="width:100px;"><span contenteditable>மொத்தத் தொகை <br /> ரூ . பை</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable=""><a class="cut">-</a>1</td>
+                        <td><span contenteditable></span></td>
+                        <td><span contenteditable></span></td>
+                        <td><span contenteditable>1</span></td>
+                        <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                        <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="add">+</a>
+
+            <table class="balance">
+                <tr>
+                    <th><span contenteditable>Total</span></th>
+                    <td><span data-prefix>$</span><span contenteditable>600.00</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Amount Paid</span></th>
+                    <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Balance Due</span></th>
+                    <td><span data-prefix>$</span><span contenteditable>600.00</span></td>
+                </tr>
+            </table>
+
+        </article>
+        <aside>
+            <h1 style="text-align:left;"><span contenteditable>Additional Notes</span></h1>
+            <div contenteditable>
+                <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+            </div>
+        </aside>
+    </div>
+    <script>
+        var currency = '@ViewBag.currency';
+    </script>
+    <script src="/js/invoice.js"></script>
+</body>
+</html>
