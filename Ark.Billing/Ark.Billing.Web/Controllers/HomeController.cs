@@ -44,6 +44,11 @@ namespace Ark.Billing.Web.Controllers
             return View();
         }
 
+        public IActionResult Ama()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

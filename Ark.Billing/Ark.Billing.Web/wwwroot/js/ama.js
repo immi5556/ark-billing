@@ -129,7 +129,7 @@ function updateInvoice() {
 
         var c2 = parseFloatHTML(cells[2]);
         var c3 = parseFloatHTML(cells[3]);
-        console.log(`parse float ${c2}, ${c3}`, cells);
+        //console.log(`parse float ${c2}, ${c3}`, cells);
         // set price as cell[2] * cell[3]
         price = c2 * c3;
 
@@ -165,6 +165,10 @@ function updateInvoice() {
     // =======================
 
     for (a = document.querySelectorAll('span[data-prefix] + span'), i = 0; a[i]; ++i) if (document.activeElement != a[i]) a[i].innerHTML = parsePrice(parseFloatHTML(a[i]));
+
+    //page - item
+    var pglen = $(".page-item").length;
+    $(".page-item").each((i, t) => t.innerHTML = `Page ${++i} / ${pglen}`);
 }
 
 /* On Content Load
@@ -256,7 +260,7 @@ function onContentLoad() {
         });
 
         document.querySelector(".ark-date-time").addEventListener("click", (e) => {
-            
+
         });
     }
 
@@ -267,39 +271,48 @@ window.addEventListener && document.addEventListener('DOMContentLoaded', onConte
 
 window.addEventListener("beforeprint", (event) => {
     console.log("Before print");
+    $(".addl-notes").each((i, t) => {
+        if (t.innerHTML == 'Additional Notes') t.classList.add('no-print');
+        else t.classList.remove('no-print');
+    })
+    $(".addl-comments").each((i, t) => {
+        if (t.innerHTML == 'Additional comments') t.classList.add('no-print');
+        else t.classList.remove('no-print');
+    })
 });
-
+document.getElementById("save-print").addEventListener("click", e => {
+    window.print();
+});
 window.addEventListener("afterprint", (event) => {
     console.log("After print");
 });
+$(document).on("click", ".remove-page", function (e) {
+    var cur_page = e.target.closest(".page");
+    if (cur_page.querySelector("table.balance")) {
+        console.log('prev page', cur_page.previousSibling)
+    } else {
+        cur_page.remove();
+    }
+});
+$(document).on("click", ".add-page", addpage);
+function addpage(e) {
+    var cur_page = e.target.closest(".page");
+    var par = cur_page.querySelector('article');
+    var ddm = ark_util.textToDom(template_page_next);
+    if (cur_page.querySelector("table.balance")) cur_page.querySelector("table.balance").remove();
+    else ddm.querySelector("table.balance").remove();
+    cur_page.insertAdjacentHTML('afterend', ddm.outerHTML);
+    // remove -page from last page
+    //var rp = $("table.balance").closest(".page").find(".remove-page");
+    //if (rp) rp.remove();
+}
 
 function invoiceBreak(e) {
-    var par = e.target.closest('article');
+    var cur_page = e.target.closest(".page");
+    if (!cur_page) return;
+    var par = cur_page.querySelector('article');
     if (checkOverflow(par)) {
-        console.log(`invoice box overlowing..`, par);
-        var cur_page = par.closest(".page");
-        cur_page.querySelector("table.balance").remove();
-        cur_page.querySelector(".continue-label").style.display = '';
-        var ddm = ark_util.textToDom(template_page_next);
-        document.body.appendChild(ddm);
-        var sll = ddm.querySelector("table.inventory tbody tr td label[data-slno]");
-        sll.innerHTML = '-';
-        sll.removeAttribute('data-slno');
-        sll.setAttribute('data-slno-extn', ''); //contenteditable
-        var eds = ddm.querySelectorAll("table.inventory tbody tr td:not(:first-child)");
-        [...eds].forEach(t => t.innerHTML = '-')
-        setTimeout(() => {
-            var new_desc = ddm.querySelector("table.inventory tbody tr td:nth-child(3)");
-            new_desc.focus();
-            new_desc.innerHTML = "<span contenteditable></span>";
-            [...ddm.querySelectorAll("table.inventory")].forEach(t => ark_table_resize.init(t));
-        }, 0)
-        //const range = window.document.createRange();
-        //range.setStart(new_desc, 0);
-        //range.setEnd(new_desc, 0);
-        //const selection = window.getSelection();
-        //selection.removeAllRanges();
-        //selection.addRange(range);
+        console.log(`invoice box overflowing..`, par);
     } else {
         console.log(`invoice box not overflowing..`, par);
     }
@@ -460,9 +473,26 @@ var template_page_next = `<div class="page">
 
         </article>
         <aside>
-            <h1 style="text-align:left;"><span contenteditable>Additional Notes</span></h1>
-            <div contenteditable>
-                <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+            <div style="border-bottom: 1px solid black;margin-bottom: 10px;padding-bottom: 10px;">
+                <span style="font-weight: bolder;" class="addl-notes no-print" contenteditable>Additional Notes</span>
+                <a style="float:right;width:60px;background: #ff99a6;box-shadow: 0 1px 2px rgba(0,0,0,0.2);background-image: -moz-linear-gradient(#00ADEE 5%, #0078A5 100%);
+    border-radius: 0.5em;
+    border-color: #0076A3;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 -1px 2px rgba(0,0,0,0.333);" class="remove-page">- page</a>
+                <a style="float:right;width:60px;background: #9AF;box-shadow: 0 1px 2px rgba(0,0,0,0.2);background-image: -moz-linear-gradient(#00ADEE 5%, #0078A5 100%);
+    border-radius: 0.5em;
+    border-color: #0076A3;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 -1px 2px rgba(0,0,0,0.333);" class="add-page">+ page</a>
+            </div>
+            <div>
+                <span contenteditable class="addl-comments no-print">Additional comments</span>
+                <span class="page-item" style="float:right;">Page 1 / 1</span>
             </div>
         </aside>
     </div>`
